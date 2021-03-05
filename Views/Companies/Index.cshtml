@@ -3,8 +3,25 @@
 @{
     ViewData["Title"] = "Index";
 }
+<!--code to change the test' position from left to right-->
+<div class="text-center">
 
-<h1>Index</h1>
+    <header>
+        <!--z-index code to display image on the Author page behind the text-->
+        <style>
+            img {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                z-index: -1;
+            }
+        </style>
+    </header>
+    <img src="~/Images/parcel.jpg" height=" 800" weight="1500" />
+    <!--code to increse the size of heading and to change its color and bold it-->
+    <h1 class="display-4"><b><p style="color:forestgreen;">Company Names</b></h1></p>
+</div>
+
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,47 +30,62 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                <!--code to increse the size of text and to change its color-->
+                <h1 class="display-5"><p style="color:forestgreen;">
+                        @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email_Id)
+                <!--code to increse the size of text and to change its color-->
+                <h1 class="display-5">
+                    <p style="color:forestgreen;">
+                        @Html.DisplayNameFor(model => model.Email_Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
+                <!--code to increse the size of text and to change its color-->
+                <h1 class="display-5">
+                    <p style="color:forestgreen;">
+                        @Html.DisplayNameFor(model => model.Address)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Mobile_Number)
+                <!--code to increse the size of text and to change its color-->
+                <h1 class="display-5">
+                    <p style="color:forestgreen;">
+                        @Html.DisplayNameFor(model => model.Mobile_Number)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Website)
+                <!--code to increse the size of text and to change its color-->
+                <h1 class="display-5">
+                    <p style="color:forestgreen;">
+                        @Html.DisplayNameFor(model => model.Website)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email_Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mobile_Number)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Website)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mobile_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Website)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
